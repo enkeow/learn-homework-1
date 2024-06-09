@@ -16,12 +16,11 @@ stock = [
     {'product': 'Xiaomi Mi11', 'items_sold': [317, 267, 290, 431, 211, 354, 276, 526, 141, 453, 510, 316]},
     {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
   ]
-def sum_phone():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
-if __name__ == "__main__":
-    main()
+total_num_sales = 0
+for items in stock:
+        total_num_sales += sum(items['items_sold'])
+        print(f"Для товара {items['product']}: суммарное количество продаж {sum(items['items_sold'])},\
+ среднее количество продаж {round(sum(items['items_sold']) / 12)}")
+print()
+print(f"Для всех товаров суммарное количество продаж {total_num_sales}, среднее количество продаж {round(total_num_sales / 12)}")
+
